@@ -1,0 +1,26 @@
+#:import utils kivy.utils
+<LoginScreen>:
+    FloatLayout:
+        GridLayout:
+            cols: 1
+            rows: 3
+            Label:
+                text: "Welcome To ManageYourLife"
+                color: "green"
+                font_size: 50
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "User name: "
+                TextInput:
+                    id: user_name
+                    height: 100
+                Label:
+                    text: "Password: "
+                TextInput:
+                    id: password
+                    height: 100
+            Button:
+                text: "Login"
+                on_release:
+                    app.login()

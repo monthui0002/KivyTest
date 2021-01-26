@@ -1,0 +1,52 @@
+#:include kv/homescreen.kv
+#:include kv/settingsscreen.kv
+#:include kv/loginscreen.kv
+GridLayout:
+    rows: 2
+    cols: 1
+    FloatLayout:
+        size_hint: 1, .3
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#67697")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            rows: 1
+            cols: 5
+            size_hint: 1, .5
+            pos_hint: {"top": 1}
+            Label:
+            Image:
+                source: "img/002-sunrise.png"
+            Label:
+            Image:
+                source: "img/001-sun.png"
+            Label:
+        GridLayout:
+            rows: 1
+            cols: 5
+            size_hint: 1, .5
+            pos_hint: {"top": .5}
+            Image:
+                source: "img/003-sunset.png"
+            Label:
+            ImageButton:
+                source: "img/avatars/man.png"
+                id: avt_img
+                on_release: app.change_screen("settings_screen")
+            Label:
+            Image:
+                source: "img/007-crescent-moon.png"
+    ScreenManager:
+        id: screen_manager
+        LoginScreen:
+            name: "login_screen"
+            id: login_screen
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        SettingsScreen:
+            name: "settings_screen"
+            id: settings_screen

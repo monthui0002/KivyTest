@@ -1,0 +1,39 @@
+#:import utils kivy.utils
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#39B3F2")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        GridLayout:
+            rows: 3
+            GridLayout:
+                cols: 1
+                size_hint: 1, .5
+                Button:
+                    text: "Button"
+                    on_release: print("ok")
+            ScrollView:
+                GridLayout:
+                    id: banner_grid
+                    cols: 2
+                    spacing: 10,10
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: '50dp'
+                    row_force_default: True
+            FloatLayout:
+                size_hint: 1, .2
+                canvas:
+                    Color:
+                        rgb: utils.get_color_from_hex("#000000")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                GridLayout:
+                    cols: 1
+                    Label:
+                        text: "Ok nha"
